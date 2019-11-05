@@ -7,7 +7,8 @@
   :style="wrapperStyles"
   :aria-hidden="$parent.slides.activeUid === _uid || isSlideVisible ? 'false' : 'true'"
   @mouseenter="$emit('mouseenter', { index, title, content, image, link }, $el)"
-  @mouseleave="$emit('mouseleave')")
+  @mouseleave="$emit('mouseleave')"
+  @click="$emit('click')")
   .vueperslide__image(v-if="image && $parent.conf.slideImageInside" :style="imageStyles")
   .vueperslide__content-wrapper(v-show="!$parent.conf.slideContentOutside && (title || hasTitleSlotData || content || hasContentSlotData)")
     .vueperslide__title(v-show="title || hasTitleSlotData")
